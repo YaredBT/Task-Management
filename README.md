@@ -18,13 +18,9 @@ $ npm run start
 
 ```
 
-
-
-
 ## description of the application
 
 ```bash
-# you can first sign up and then login 
-# you can add and delete tasks after you login 
+# you should first sign up and then login 
 # this will take you to the main page of the application where you can manage your task 
 ```
