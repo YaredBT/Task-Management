@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task management</title>
+    <style>
+      .form-field {
+        margin-top: 4rem;
+        padding: 2rem 1rem;
+        display: flex;
+        flex-direction: column;
+        min-width: 400px;
+        max-width: 800px;
+        box-shadow: 0 0 5px #ddd;
+      }
+      .sub-btn {
+        width: 5rem;
+        padding: 3px 5px;
+        border: 1px solid #333;
+        border-radius: 1rem;
+        margin-top: 1.5rem;
+      }
+      .inp-field {
+        margin-bottom: 1rem;
+      }
+      textarea {
+        height: 7rem;
+        overflow-y: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <form action="/dashboard" method="POST" class="form-field">
+        <label for="title">Task title</label>
+        <input class="inp-field" type="text" id="title" required name="title" />
+        <label for="description">Task description</label>
+        <textarea
+          class="inp-field"
+          type="text"
+          id="description"
+          required
+          name="description"
+        ></textarea>
+
+        <label for="date">Due date</label>
+        <input
+          class="inp-field"
+          type="date"
+          id="date"
+          required
+          name="date"
+          min="2023-05-03"
+        />
+        <button class="sub-btn">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>

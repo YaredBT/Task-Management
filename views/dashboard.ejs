@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task management</title>
+    <style>
+      .flex {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.5rem;
+        margin-bottom: 3rem;
+      }
+      .task {
+        padding: 1rem;
+        margin-top: 1rem;
+        border-radius: 1rem;
+        position: relative;
+        box-shadow: 0 0 5px #ddd;
+      }
+      .title {
+        margin-bottom: 1rem;
+      }
+      .detail {
+        position: absolute;
+        text-decoration: none;
+        cursor: pointer;
+        right: 1rem;
+        top: 0.5rem;
+        padding: 0.5rem 1rem;
+        border: 1px solid red;
+        border-radius: 1rem;
+      }
+      .detail:hover,
+      .detail:focus {
+        text-decoration: none;
+        background-color: #333;
+        color: #fff;
+        border: none;
+      }
+      .date {
+        font-size: 1rem;
+        margin-top: 1rem;
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex">
+      <h1>Dashboard</h1>
+      <div>
+        <a href="/create" class="btn btn-secondary">create</a>
+        <a href="/users/logout" class="btn btn-secondary">Logout</a>
+      </div>
+    </div>
+    <div class="tasks content">
+      <h1 class="title">All Tasks</h1>
+      <% if(tasks.length > 0) { %> <% tasks.forEach(task => { %>
+      <div class="task">
+        <a class="detail" href="/dashboard/<%= task._id %>">details --></a>
+        <h2 class="task--name"><%= task.title %></h2>
+        <p class="date"><%= task.date %></p>
+      </div>
+      <% }) %> <% } else { %>
+      <p>There are no tasks to display</p>
+      <% } %>
+    </div>
+  </body>
+</html>
